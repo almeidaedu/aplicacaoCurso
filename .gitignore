@@ -4,8 +4,11 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+!.log/*
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
 node_modules/
+*.log
+*.lock
