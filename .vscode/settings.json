@@ -3,7 +3,7 @@
   "terminal.integrated.fontFamily": "Fira Code",
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
-  "editor.fontSize": 18,
+  "editor.fontSize": 17,
   "editor.lineHeight": 24,
   "workbench.iconTheme": "vscode-icons",
   "editor.rulers": [
