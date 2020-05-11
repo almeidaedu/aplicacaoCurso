@@ -63,9 +63,9 @@ class AppointmentController {
     /**
      * Check if user is a provider too
      */
-    const userId = await req.userId;
+    const user = await User.findByPk(req.userId);
 
-    if (userId === checkIsProvider.id) {
+    if (user.id === checkIsProvider.id) {
       return res
         .status(401)
         .json({ error: 'You can not create appointments with yourself' });
@@ -106,7 +106,7 @@ class AppointmentController {
     /**
      *  Notify appointment Provider
      */
-    const user = await User.findByPk(req.userId);
+    // const user = await User.findByPk(req.userId);
     const formattedDate = format(
       hourStart,
       "'dia' dd 'de' MMMM', às' H:mm'h'",
