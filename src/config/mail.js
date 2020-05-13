@@ -7,6 +7,6 @@ export default {
     pass: 'ef594a85776ef9',
   },
   default: {
-    from: 'Eduardo Almeida <noreply@gorbarber.com>',
+    from: 'Equipe GoBarber <noreply@gorbarber.com>',
   },
 };
