@@ -14,3 +14,4 @@ node_modules/
 *.lock
 package.json
 temp/uploads/*
+.env
