@@ -1,6 +1,22 @@
 import Sequelize, { Model } from 'sequelize';
 import bcrypt from 'bcryptjs';
 
+/**
+ * @swagger
+ * definitions:
+ *  User:
+ *    type: object
+ *    properties:
+ *      id:
+ *        type: integer
+ *      name:
+ *        type: string
+ *      email:
+ *        type: string
+ *      password:
+ *        type: string
+ */
+
 class User extends Model {
   static init(sequelize) {
     super.init(

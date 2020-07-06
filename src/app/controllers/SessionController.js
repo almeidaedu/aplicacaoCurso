@@ -5,6 +5,39 @@ import User from '../models/User';
 import File from '../models/File';
 import authConfig from '../../config/auth';
 
+/**
+ * @swagger
+ * /sessions:
+ *   post:
+ *     tags:
+ *       - Session
+ *     name: Login
+ *     summary: Logs in a user
+ *     consumes:
+ *       - application/json
+ *     parameters:
+ *       - name: Usuario
+ *         in: body
+ *         schema:
+ *           type: object
+ *           properties:
+ *             email:
+ *               type: string
+ *             password:
+ *               type: string
+ *               format: password
+ *         required:
+ *           - email
+ *           - password
+ *     responses:
+ *       200:
+ *         description: User found and logged in successfully
+ *       400:
+ *         description: Validation fails
+ *       401:
+ *         description: User not found
+ */
+
 class SessionController {
   async store(req, res) {
     const schema = Yup.object().shape({

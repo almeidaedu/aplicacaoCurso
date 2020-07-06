@@ -10,16 +10,17 @@ import ScheduleController from './app/controllers/ScheduleController';
 import NotificationController from './app/controllers/NotificationController';
 import AvailableController from './app/controllers/AvailableController';
 
-import authMiddleware from './app/middleweres/auth';
+// import authMiddleware from './app/middleweres/auth';
 import AppointmentController from './app/controllers/AppointmentController';
 
 const routes = new Router();
 const upload = multer(multerConfig);
 
 routes.post('/users', UserController.store);
+
 routes.post('/sessions', SessionController.store);
 
-routes.use(authMiddleware);
+// routes.use(authMiddleware);
 
 routes.put('/users', UserController.update);
 

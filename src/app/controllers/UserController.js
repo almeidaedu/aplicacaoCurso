@@ -2,6 +2,45 @@ import * as Yup from 'yup';
 import User from '../models/User';
 import File from '../models/File';
 
+/**
+ * @swagger
+ * /users:
+ *   put:
+ *     tags:
+ *       - Users
+ *     name: Login
+ *     summary: Logs in a user
+ *     security:
+ *      - bearerAuth: []
+ *     consumes:
+ *       - application/json
+ *     parameters:
+ *       - name: body
+ *         in: body
+ *         schema:
+ *           $ref: '#/definitions/User'
+ *           type: object
+ *           properties:
+ *             username:
+ *               type: string
+ *             password:
+ *               type: string
+ *               format: password
+ *         required:
+ *           - username
+ *           - password
+ *           - email
+ *           - oldPassword
+ *           - confirmPassword
+ *     responses:
+ *       200:
+ *         description: Response from API
+ *       400:
+ *         description: Validation fails
+ *       401:
+ *         description: User not found
+ */
+
 class UserController {
   async store(req, res) {
     const schema = Yup.object().shape({
@@ -54,7 +93,7 @@ class UserController {
     }
     const { email, oldPassword } = req.body;
 
-    const user = await User.findByPk(req.userId);
+    const user = await User.findOne(req.email);
 
     if (email !== user.email) {
       const userExists = await User.findOne({ where: { email } });
