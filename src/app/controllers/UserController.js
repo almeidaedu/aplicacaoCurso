@@ -15,15 +15,22 @@ import File from '../models/File';
  *     consumes:
  *       - application/json
  *     parameters:
- *       - name: body
+ *       - name: Update Usuario
  *         in: body
  *         schema:
- *           $ref: '#/definitions/User'
  *           type: object
  *           properties:
  *             username:
  *               type: string
+ *             email:
+ *               type: string
  *             password:
+ *               type: string
+ *               format: password
+ *             oldPassword:
+ *               type: string
+ *               format: password
+ *             confirmPassword:
  *               type: string
  *               format: password
  *         required:
