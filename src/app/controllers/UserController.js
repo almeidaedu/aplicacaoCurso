@@ -9,7 +9,7 @@ import File from '../models/File';
  *     tags:
  *       - Users
  *     name: Login
- *     summary: Logs in a user
+ *     summary: Update a user already logged in
  *     security:
  *      - bearerAuth: []
  *     consumes:
